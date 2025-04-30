@@ -8,7 +8,7 @@ public class CharacterController : MonoBehaviour
     /// 移動速度
     /// </summary>
     [SerializeField]
-    private float moveSpeed = 3f;
+    private CharacterData characterData;
 
     [SerializeField]
     private PlayerInput playerInput;
@@ -36,7 +36,7 @@ public class CharacterController : MonoBehaviour
         // 移動方向
         var direction = new Vector3(moveVector2.x , moveVector2.y , 0); // 1,1,0
         // 移動向量 deltaTime = 1/fps , 1/60 = 0.16667f
-        var movement = direction * moveSpeed * Time.deltaTime;
+        var movement = direction * characterData.moveSpeed * Time.deltaTime;
         transform.position += movement;
     }
 }
